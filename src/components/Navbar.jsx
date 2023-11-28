@@ -1,6 +1,6 @@
 import React from 'react'
-// const Logo_Url = "./Assets/FoodFiesta_Logo.png"
 import logo from "./Assets/FoodFiesta_Logo.png"
+import { Link } from 'react-router-dom'
 function Navbar() {
     return (
         <>
@@ -8,10 +8,10 @@ function Navbar() {
                 <img className="brand-logo" src={logo} alt="FoodFiesta_Logo" />
                 <div className="nav-items">
                     <ul>
-                        <li>Home</li>
-                        <li>Menu</li>
-                        <li>About</li>
-                        <li>Contact</li>
+                        <li><Link to="/">Home</Link></li>
+                        {/* <li><Link to="/menu">Menu</Link></li> */}
+                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
                     </ul>
                 </div>
             </div>

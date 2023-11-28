@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Card'
+import { Link } from 'react-router-dom';
 
 function Content() {
     console.log("Content rendered");
@@ -62,13 +63,14 @@ function Content() {
             {!renderedData ? <h1>No data</h1> : renderedData?.length === 0 ? <h1>Loding...</h1> : <div className="cardList">
                 {renderedData.map((item) => {
                     return (
-                        <Card
-                            {...item.info}
-                            key={item.info.id}
-                        />
+                        <Link to={"/resturant/" + item.info.id} key={item.info.id} >
+                            <Card
+                                {...item.info}
+                            />
+                        </Link>
                     )
                 })}
-            </div>}
+            </div >}
         </>
     )
 }
